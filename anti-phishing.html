@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Phishing Email System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .content-section {
+            max-width: 960px;
+            margin: auto;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        .content-section img {
+            width: 100%;
+            max-width: 700px;
+            margin: 1rem 0;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .content-section ul {
+            padding-left: 1.5rem;
+        }
+        h2 {
+            margin-top: 3rem;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/alvin_logo.png" alt="Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="portfolio-IT.html">Portfolio - IT & Cybersecurity</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pentest.html">Penetration Testing</a></li>
+                        <li><a href="forensics.html">Digital Forensics</a></li>
+                        <li><a href="anti-phishing.html">Anti-Phishing System</a></li>
+                    </ul>
+                </li>
+                <li><a href="portfolio-Content Creation.html">Portfolio - Content Creation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="cover">
+        <h1>Anti-Phishing Email Detection System</h1>
+        <img src="images/anti-phishing-thumb.png" alt="Project Cover">
+        <p>This capstone project demonstrates how machine learning can be leveraged to identify phishing emails by analyzing email structure, content, sender behavior, and attachments.</p>
+    </section>
+
+    <section class="content-section">
+        <h2>1. Introduction</h2>
+        <img src="images/anti-phishing-introduction.png" alt="Introduction" style="max-width:600px; width:100%; height:auto;">
+        <p>Phishing is the most common method of email-based attacks. Studies show that <strong>43% of phishing emails contain malicious links</strong>, making automated link detection a key defense mechanism.</p>
+
+        <h2>2. Workflow Overview</h2>
+        <img src="images/anti-phishing-process.png" alt="Workflow">
+        <p>The solution follows a clear pipeline: extract email data → engineer features → classify using ML models → predict phishing likelihood.</p>
+
+        <h2>3. Email Structure</h2>
+        <img src="images/anti-phishing-structure.png" alt="Email Components">
+        <p>Each email is dissected into five core components:</p>
+        <ul>
+            <li><strong>Sender Address & Domain</strong></li>
+            <li><strong>Subject</strong></li>
+            <li><strong>Body</strong> (plus word count)</li>
+            <li><strong>URLs</strong> (presence + evaluation)</li>
+            <li><strong>Attachments</strong> (checked via VirusTotal)</li>
+        </ul>
+
+        <h2>4. Dataset Handling</h2>
+        <img src="images/anti-phishing-dataset.png" alt="Dataset">
+        <p>Training data was compiled from multiple labeled sources and processed into vectors using natural language features and URL patterns.</p>
+
+        <h2>5. Feature Extraction</h2>
+        <img src="images/anti-phishing-extract.png" alt="Email Extraction">
+        <img src="images/anti-phishing-extract-domain.png" alt="Domain Analysis">
+        <p>Our system extracts email metadata including sender domain, URL presence, and combines body + subject for better context analysis.</p>
+
+        <h2>6. Machine Learning Features</h2>
+        <img src="images/anti-phishing-machine-learning-domain.png" alt="ML Features">
+        <p>Features are vectorized using <code>TfidfVectorizer</code>. This includes merged body + subject text, word counts, and domain patterns.</p>
+
+        <h2>7. Model Comparison</h2>
+        <img src="images/anti-phishing-machine-algorithm1.png" alt="Model Comparison">
+        <img src="images/anti-phishing-machine-algorithm2.png" alt="Accuracy Chart">
+        <p>We compared different classifiers on the same dataset:</p>
+        <ul>
+            <li>Naïve Bayes – fast but less accurate</li>
+            <li>Logistic Regression – linear & interpretable</li>
+            <li><strong>Random Forest Classifier</strong> – top performer, handles non-linearity well</li>
+                    <p>Random Forest builds multiple decision trees and uses majority voting to decide class. This method increases accuracy and reduces overfitting by leveraging different perspectives of the data.</p>
+
+        </ul>
+
+        <h2>8. Demo & Prediction Workflow</h2>
+        <img src="images/anti-phishing-content.png" alt="Content Prediction">
+        <img src="images/anti-phishing-url.png" alt="URL Evaluation">
+        <ul>
+            <li>Parsed .eml email content</li>
+            <li>Extracted and sanitized sender and body</li>
+            <li>Checked attachments using VirusTotal API</li>
+            <li>Applied manual testing via input interface</li>
+        </ul>
+        <img src="images/anti-phishing-manualinput.png" alt="Manual Input">
+
+            <li>All attachments are automatically uploaded to VirusTotal for malware scanning and threat analysis.</li>
+        <img src="images/anti-phishing-virustotal.png" alt="VirusTotal">
+
+        <pre><code class="language-python">def scan_file(file_path):
+    # Submit file to VirusTotal
+
+
+    url = 'https://www.virustotal.com/vtapi/v2/file/scan'
+    with open(file_path, 'rb') as f:
+        files = {'file': (os.path.basename(file_path), f)}
+        params = {'apikey': 'API_KEY'}
+        response = requests.post(url, files=files, params=params)
+    return response.json()</code></pr>
+
+        <h2>9. Model Training</h2>
+        <img src="images/anti-phishing-pkl.png" alt="Model Training">
+        <ul>
+            <li>Data split: 80% for training, 20% for testing</li>
+            <li>Model saved as <code>.pkl</code> for reuse</li>
+            <li>Prediction based on domain, body content, and link signals</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2025 Alvin Wong. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

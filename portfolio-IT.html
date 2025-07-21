@@ -2,54 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="wideth=device-width, initial-scale=1.0">
-    <title> About Me </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - IT Projects</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-    <body>
-        <header>
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/alvin_logo.png" alt="Logo">
-                </a>
-            </div>
-    
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="portfolio-IT.html">Portfolio - IT</a></li>
-                    <li><a href="portfolio-Content Creation.html">Portfolio - Content Creation</a></li>
-                </ul>
-            </nav>
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/alvin-wongsiuhong" target="blank">
-                    <img src="images/LI-In-Bug.png" alt="LinkedIn" class="social-icons"></a>
-                <a href="mailto:alvin00715@gmail.com">
-                    <img src="images/email.png" alt="email" class="social-icons"></a>            
-                <!-- 
-    
-               <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
-                
-                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="images/email.png" alt="Email"></a> 
-                
-                -->
-            </div>
-        </header>
-        
-        <section class="content">
-            <h1>Portfolio</h1>
-            <ul>
-                <li>Cybersecurity Project</li>
-                <li>Website Development Project</li>
-                <li>Marketing Project</li>
-            </ul>
-        </section>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/alvin_logo.png" alt="Logo">
+            </a>
+        </div>
 
-        <footer>
-            <p>© 2025 Alvin Wong. All Rights Reserved.</p>
-        </footer>
-    </body>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="portfolio-IT.html">Portfolio - IT & Cybersecurity</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pentest.html">Penetration Testing</a></li>
+                        <li><a href="forensics.html">Digital Forensics</a></li>
+                        <li><a href="anti-phishing.html">Anti-Phishing System</a></li>
+                    </ul>
+                </li>
+                <li><a href="portfolio-Content Creation.html">Portfolio - Content Creation</a></li>
+            </ul>
+        </nav>
+
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/alvin-wongsiuhong" target="_blank">
+                <img src="images/LI-In-Bug.png" alt="LinkedIn" class="social-icons">
+            </a>
+            <a href="mailto:alvin00715@gmail.com">
+                <img src="images/email.png" alt="email" class="social-icons">
+            </a>
+        </div>
+    </header>
+
+    <!-- Cover Section -->
+    <section class="cover">
+        <h1>ALVIN WONG</h1>
+        <img src="images/Central.png" alt="Cover Photo">
+        <h2>IT & CYBERSECURITY PROJECTS</h2>
+    </section>
+
+    <!-- Portfolio Project Links -->
+    <section class="content">
+        <h2>Explore My Cybersecurity Work</h2>
+        <div class="project-links">
+            <div class="project-card">
+                <img src="images/anti-phishing-thumb.png" alt="anti-phishing Thumbnail">
+                <h3>Anti-Phishing Email System</h3>
+                <p>Graduate capstone project focusing on detecting and mitigating phishing attacks using rule-based filters and awareness training. Integrated email simulation and report generation to improve enterprise-level resilience.</p>
+                <a href="anti-phishing.html" class="button">View Projects</a>
+            </div>
+
+            <div class="project-card">
+                <img src="images/pentest-thumb.png" alt="pen test Thumbnail">
+                <h3>Penetration testing</h3>
+                <p>Conducted hands-on ethical hacking in a lab environment. Included reconnaissance, vulnerability scanning, exploitation, and post-exploitation using tools like Nmap, Metasploit, and Hydra.</p>
+                <a href="pentest.html" class="button">View Projects</a>
+            </div>
+
+            <div class="project-card">
+                <img src="images/Forensics-thumb.png" alt="Forensics Thumbnail">
+                <h3>Forensics</h3>
+                <p>Conducted digital forensic analysis using tools like Autopsy and FTK Imager. Investigated file metadata, email artifacts, and reconstructed event timelines to simulate incident response.</p>
+                <a href="forensics.html" class="button">View Projects</a>
+            </div>
+
+ 
+    </section>
+
+    <footer>
+        <p>© 2025 Alvin Wong. All Rights Reserved.</p>
+    </footer>
+</body>
 </html>

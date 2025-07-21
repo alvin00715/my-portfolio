@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forensics Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .content-section {
+            max-width: 960px;
+            margin: auto;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        .content-section img {
+            width: 100%;
+            max-width: 700px;
+            margin: 1rem 0;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .content-section ul {
+            padding-left: 1.5rem;
+        }
+        h2 {
+            margin-top: 3rem;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/alvin_logo.png" alt="Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="portfolio-IT.html">Portfolio - IT & Cybersecurity</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pentest.html">Penetration Testing</a></li>
+                        <li><a href="forensics.html">Digital Forensics</a></li>
+                        <li><a href="anti-phishing.html">Anti-Phishing System</a></li>
+                    </ul>
+                </li>
+                <li><a href="portfolio-Content Creation.html">Portfolio - Content Creation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+
+    <section class="cover">
+        <h1>Forensics Case Investigation - </h1>
+        <p></p>
+        <h1>Data Leakage Case from NIST</h1>
+        <img src="images/forensics-thumb.png" alt="Forensics Cover">
+        <p></p>
+        <p>This case study explores a forensic analysis of a suspected data leakage scenario using evidence from the NIST CFReDS data-leakage case image. </p>
+        <p>The objective was to determine whether sensitive information was exfiltrated and to identify responsible activity.</p>
+    </section>
+
+    <section class="content-section">
+        <h2>1. Case Introduction</h2>
+        <p>The case involves a fictional company experiencing a suspected data breach. Investigators were tasked with analyzing a forensic disk image to detect unauthorized activity, trace the flow of sensitive data, and identify key individuals and actions responsible for the leak.</p>
+
+        <h2>2. Tools Used</h2>
+        <ul>
+            <li><strong>Autopsy</strong> – GUI-based forensics suite used to examine disk image contents</li>
+            <li><strong>FTK Imager</strong> – Previewed image files and extracted artifacts</li>
+            <li><strong>Wireshark</strong> – Analyzed captured network traffic</li>
+            <li><strong>Volatility</strong> – Investigated RAM dumps for live activity</li>
+            <li><strong>Strings & grep</strong> – Scanned disk for embedded keywords and patterns</li>
+            <li><strong>File Signature Tools</strong> – Verified file integrity and hidden content</li>
+        </ul>
+
+        <h2>3. Key Evidence Found</h2>
+        <ul>
+            <li><strong>Computer and USB Activity:</strong> Logs indicated the insertion of external drives and file transfers during non-working hours.</li>
+            <img src="images/forensics-timeline.png" alt="forensics timeline Screenshot">
+            <img src="images/forensics-timeline2.png" alt="forensics timeline2 Screenshot">
+
+            <li><strong>Email Trails:</strong> Extracted messages confirmed internal files being sent as attachments.</li>
+            <img src="images/Forensics-mail.png" alt="forensics mail Screenshot">
+            <li><strong>Restored and Hidden Files:</strong> Confidential documents were stored in concealed directories and renamed.</li>
+            <img src="images/forensics-recover.png" alt="forensics recovered Screenshot">
+            <li><strong>Network Logs:</strong> Wireshark revealed access to suspicious external servers.</li>
+            <li><strong>Volatile Memory:</strong> Passwords, user sessions, and open documents were recovered, pointing to intentional data exfiltration.</li>
+            <img src="images/forensics-history.png" alt="forensics forensics-history Screenshot">
+            <img src="images/forensics-timeline3.png" alt="forensics forensics-timeline3 Screenshot">
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2025 Alvin Wong. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
